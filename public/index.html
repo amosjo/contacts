@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script></span>
+<script src="contact.js" ng-module="myApp"></script>
+<link rel="stylesheet" type="text/css" href="paint.css">
+
+
+
+<body ng-app="myApp" >
+    <div ng-controller="myAppController">
+
+<script type="text/ng-template"  id="contact_tree.html">
+       
+        <li style="list-style: none; font-size:46px;"  ng-class="data.folderClass" ng-click="toggleChildren(data)">  {{data.name}}</li>       
+            <div id="expanded-data" ng-if="data.childrenVisible">              
+                <ul style="list-style: none; font-size:46px; "  ng-repeat="data in data.contacts" ng-include="'contact_tree.html'"></ul>     
+            </div>
+            
+</script>
+
+<p style="font-size:58px;"><strong>Contact Tree</strong></p>
+
+    <ul ng-repeat="data in contacts" ng-include="'contact_tree.html'"> </ul>    
+
+</div>
+
+
+</body>
+
+
+
+
+</html>   
